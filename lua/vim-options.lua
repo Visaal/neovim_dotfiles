@@ -46,10 +46,13 @@ k.set("n", "<C-l>", "<C-w>l", { desc = "window right" })
 k.set("n", "<C-j>", "<C-w>j", { desc = "window down" })
 k.set("n", "<C-k>", "<C-w>k", { desc = "window up" })
 k.set("n", "<leader>u", "<cmd> UndotreeToggle <CR>", { desc = "toggle undo tree" })
+k.set("n", "<leader>sa", "ggVG", { desc = "select all text" })
+k.set("n", "<leader>ss", ":SessionDelete <CR> :SessionSave <CR>", { desc = "save session" })
 
 -- NORMAL & VISUAL MAPPINGS
 k.set({ "n", "v" }, "∆", "<cmd> +10 <CR> 0", { desc = "jump down 10 lines" }) -- Alt-j
 k.set({ "n", "v" }, "˚", "<cmd> -10 <CR> 0", { desc = "jump up 10 lines" }) -- Alt-k
+k.set({ "n", "v" }, "p", "p<cmd>let @*=@0<CR>", { desc = "paste and copy 0 reg over to *", noremap = true })
 
 -- INSERT MAPPINGS
 k.set("i", "<C-s>", "<Esc> <cmd> w <CR>", { desc = "exit insert & save file" })
